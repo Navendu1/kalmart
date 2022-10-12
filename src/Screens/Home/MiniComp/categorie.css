@@ -1,0 +1,20 @@
+.cat-container {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+}
+
+
+.cat-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cate {
+
+  padding: 10px;
+  margin: 4px;
+  text-align: center;
+  background-color: aqua;
+  border-radius: 10px;
+  color: rgb(25, 28, 45);
+}
