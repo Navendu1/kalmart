@@ -11,7 +11,6 @@ function Home() {
             <Categories/>
             <Carousel/>
             <PopulerProductComp/>
-            Home
 
         </div>
     )

@@ -5,9 +5,14 @@ import './productDetails.css'
 import CarouselComp from '../Home/MiniComp/CarouselComp';
 import { Color } from '../../Color';
 import ProductCardComp from '../../MiniComp/ProductCardComp';
+import Hader from '../../MiniComp/Hader';
+import Categories from '../Home/MiniComp/Categories';
 function ProductDetails() {
   return (
     <div>
+
+      <Hader/>
+      <Categories/>
       <CarouselComp />
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>

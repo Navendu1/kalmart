@@ -1,19 +1,22 @@
-import React from 'react'
+import React from "react";
 
-function ProductCardComp() {
+function ProductCardComp({img,name,price}) {
   return (
-    <div className='product-card'>
-    <img
-        className='product-image'
-        src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Vesta_sewing_machine_IMGP0718.jpg/800px-Vesta_sewing_machine_IMGP0718.jpg'
-
-    />
-    <div>
-        <h4>product name here</h4>
-        <h6>$12.50</h6>
+    <div className="product-card">
+      <img
+        style={{ objectFit: "cover" }}
+        className="product-image"
+        src={img}
+        alt="loading"
+      />
+      <div>
+        <text className="product-name-style">
+          {name}</text>
+        <br/>
+        <text className="product-price-style">{price} </text>
+      </div>
     </div>
-</div>
-  )
+  );
 }
 
-export default ProductCardComp
+export default ProductCardComp;

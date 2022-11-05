@@ -20,8 +20,11 @@ function Categories() {
         <div className='cat-container'>
  
             {data &&data.map((props, index) =>
-                <div key={index} className='cate'>
-                    { props}
+                <div key={index} className="cat">
+                    <img
+                     className='cate'
+                    src='https://www.block-machine.net/wp-content/uploads/2019/05/3-QT4-25C-Automatic-Brick-Making-Machine.jpg' alt="categories" />
+                  <text style={{fontSize:'12px',textAlign:'center',fontWeight:'bold'}}> {" briks machine"}  </text>  
                 </div>)}
 
 
