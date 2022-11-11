@@ -9,6 +9,7 @@ function CarouselComp() {
   return (
     <div style={{height:'50vh'}}>
       <Carousel autoPlay={true} showStatus={false} infiniteLoop={true} dynamicHeight={true}>
+        
         <div style={{ backgroundColor: Color.blue, width: '100%', height: '50vh', color: 'white' }}>
 
           hello 1

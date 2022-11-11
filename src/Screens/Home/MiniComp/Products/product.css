@@ -55,9 +55,7 @@ text-align: justify;
 }
 
 @media only screen and (min-width: 1024px) {
-  body {
-    background-color: lightblue;
-  }
+ 
 
   .product-image {
     /* width:22vw; */
@@ -88,5 +86,10 @@ text-align: justify;
 
 h4, h6, p{
   margin: 5px;
+}
+
+.texthh:hover{
+ cursor: pointer;
+ background: transparent;
 }
 
