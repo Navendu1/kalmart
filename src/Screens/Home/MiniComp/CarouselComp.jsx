@@ -5,31 +5,25 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { Color } from '../../../Color';
 
-function CarouselComp() {
+function CarouselComp({ image1, image2, image3 }) {
   return (
-    <div style={{height:'50vh'}}>
-      <Carousel autoPlay={true} showStatus={false} infiniteLoop={true} dynamicHeight={true}>
-        
-        <div style={{ backgroundColor: Color.blue, width: '100%', height: '50vh', color: 'white' }}>
+    <div style={{ height: '50vh' }}>
+      <Carousel autoPlay={true} showStatus={false} infiniteLoop={true} dynamicHeight={true} showThumbs={false}>
 
-          hello 1
-        </div>
-        <div style={{ backgroundColor: Color.blue, width: '100%', height: '50vh', color: 'white' }}>
+        <img style={{
+          width: '100%',
+          height: '50vh', color: 'white', objectFit: 'contain',
+        }} src={image1} alt='loading' />
 
-          hello 2
-        </div>
-        <div style={{ backgroundColor: Color.blue, width: '100%', height: '50vh', color: 'white' }}>
 
-          hello 3
-        </div>
-        <div style={{ backgroundColor: Color.blue, width: '100%', height: '50vh', color: 'white' }}>
 
-          hello 4
-        </div>
-        <div style={{ backgroundColor: Color.blue, width: '100%', height: '50vh', color: 'white' }}>
 
-          hello 5
-        </div>
+        <img style={{ width: '100vw', height: '50vh', color: 'white', objectFit: 'contain' }} src={image2} alt='loading' />
+
+        <img style={{ width: '100vw', height: '50vh', color: 'white', objectFit: 'contain' }} src={image3} alt='loading' />
+
+
+
 
       </Carousel>
 

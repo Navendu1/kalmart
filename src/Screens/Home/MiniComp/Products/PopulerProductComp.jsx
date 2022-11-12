@@ -6,9 +6,8 @@ import "./product.css";
 
 import { useNavigate } from "react-router-dom";
 
-function PopulerProductComp() {
+function PopulerProductComp({ data }) {
   let navigate = useNavigate();
-
   return (
     <>
       {/* heading section */}
@@ -23,33 +22,29 @@ function PopulerProductComp() {
         {/* on click to show all products */}
 
         <button
-         style={{ background: "transparent",
-         borderWidth:'0px',
-         color: Color.blue,
-         fontSize: "15px",
-         fontWeight:'bold'
-         }}
-        className="texthh" onClick={() => navigate("/allProduct")}>
-         
-            View All Products 
-        
+          style={{
+            background: "transparent",
+            borderWidth: '0px',
+            color: Color.blue,
+            fontSize: "15px",
+            fontWeight: 'bold'
+          }}
+          className="texthh" onClick={() => navigate("/allProduct",{state:data})}>
+
+          View All Products
+
         </button>
       </div>
 
       {/* .............show all populer products............ */}
       <div className="product-card-container">
-        <ProductCardComp
-          img={
-            "https://5.imimg.com/data5/QW/TC/HT/SELLER-1371067/automatic-brick-making-machine-500x500.jpg"
-          }
-          name={"B39/40 BRICKS FULLY AUTOMATIC FLY ASH BRICKS MACHINE"}
-          price={"₹62,220.00"}
-        />
-        <ProductCardComp />
-        <ProductCardComp />
-        <ProductCardComp />
-        <ProductCardComp />
-        <ProductCardComp />
+
+        {data && data.map((props) => (
+          <ProductCardComp key={props.id}
+           data={props}  />
+
+        ))}
+
       </div>
     </>
   );

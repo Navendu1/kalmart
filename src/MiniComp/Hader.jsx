@@ -13,11 +13,11 @@ function Hader() {
     return (
         <>
             <div style={headerStyle}>
-                <div onClick={()=>navigate('/')}>
+                <div className='click' onClick={()=>navigate('/')}>
                  {/* onclick  goto home page*/}
                     brand logo
                 </div>
-                <div>
+                <div className='click'>
                     {/* onclick  goto login page*/}
                     login
                 </div>

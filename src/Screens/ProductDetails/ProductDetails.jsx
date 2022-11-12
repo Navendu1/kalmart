@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 
 import "./productDetails.css";
 
@@ -6,27 +6,42 @@ import CarouselComp from "../Home/MiniComp/CarouselComp";
 import { Color } from "../../Color";
 import ProductCardComp from "../../MiniComp/ProductCardComp";
 import Hader from "../../MiniComp/Hader";
-import Categories from "../Home/MiniComp/Categories";
+
 import Youtube from "./Youtube";
 
+import { useLocation } from "react-router-dom";
+import { ModelData } from "../../Data/DemoData";
+
+
+
 function ProductDetails() {
+
+  const { state } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    console.log("first")
+  }, [state])
+
   return (
     <div>
       <Hader />
       {/* <Categories/> */}
 
-      <CarouselComp />
+      <CarouselComp image1={state.image1} image2={state.image2} image3={state.image3} />
 
       <div style={{ display: "flex", flexDirection: "column" }}>
         <text className="view-more-details-page" style={{ color: Color.blue }}>
-          view more from companyname
+          view more from {state.companyName}
         </text>
 
         <text className="product-name-details-page">
-          Product name goes here
+          {state.name}
         </text>
 
-        <text className="product-price-details-page">Price</text>
+        <text className="product-price-details-page">
+          {`₹${state.price}`}
+        </text>
       </div>
 
       <div>
@@ -46,15 +61,7 @@ function ProductDetails() {
       <div>
         <h4>Product Description</h4>
         <p style={{ paddingLeft: "1px" }}>
-          What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing
-          and typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley
-          of type and scrambled it to make a type specimen book. It has survived
-          not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in
-          the 1960s with the release of Letraset sheets containing Lorem Ipsum
-          passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum.
+          {state.details}
         </p>
       </div>
 
@@ -63,20 +70,14 @@ function ProductDetails() {
           <h4>simmiler products</h4>
 
           <div className="product-card-container">
-            <ProductCardComp
-              img={
-                "https://5.imimg.com/data5/QW/TC/HT/SELLER-1371067/automatic-brick-making-machine-500x500.jpg"
-              }
-              name={"B39/40 BRICKS FULLY AUTOMATIC FLY ASH BRICKS MACHINE"}
-            />
 
-            <ProductCardComp />
-            <ProductCardComp />
-            <ProductCardComp />
-            <ProductCardComp />
-            <ProductCardComp />
-            <ProductCardComp />
-            <ProductCardComp />
+            {ModelData && ModelData.map((props) => (
+              <ProductCardComp
+                key={props.id}
+                data={props}
+              />
+            ))}
+
           </div>
         </div>
 
@@ -94,6 +95,7 @@ function ProductDetails() {
           }}
         >
           <button
+          onClick={()=>window.open(`tel:900300400`)}
             style={{
               backgroundColor: "#196ddb",
               width: "100%",
@@ -105,7 +107,7 @@ function ProductDetails() {
               bottom: 0,
               display: "flex",
               alignItems: "center",
-              gap:"10px"
+              gap: "10px"
             }}
           >
             <img
@@ -129,6 +131,8 @@ function ProductDetails() {
           </button>
 
           <button
+
+          onClick={()=>window.open('https://wa.me/919876543210/?text=Hi Sam, Whatsup')}
             style={{
               backgroundColor: "#44eb61",
               width: "100%",

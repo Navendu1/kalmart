@@ -4,13 +4,14 @@ import Carousel from './MiniComp/CarouselComp'
 import Categories from './MiniComp/Categories'
 import PopulerProductComp from './MiniComp/Products/PopulerProductComp'
 
-function Home() {
+function Home({data}) {
+    
     return (
         <div>
             <Hader />
-            <Categories/>
-            <Carousel/>
-            <PopulerProductComp/>
+            <Categories props={data}/>
+            <Carousel image1={data[0].image1} image2={data[0].image2} image3={data[0].image3}/>
+            <PopulerProductComp data={data}/>
 
         </div>
     )
