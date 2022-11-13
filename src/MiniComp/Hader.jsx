@@ -8,8 +8,6 @@ const headerStyle = { backgroundColor:Color.TrueBlue, padding: 10, color: "white
 function Hader() {
     let navigate = useNavigate();
 
-
-
     return (
         <>
             <div style={headerStyle}>
