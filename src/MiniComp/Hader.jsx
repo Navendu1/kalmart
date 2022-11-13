@@ -15,7 +15,7 @@ function Hader() {
             <div style={headerStyle}>
                 <div className='click' onClick={()=>navigate('/')}>
                  {/* onclick  goto home page*/}
-                    brand logo
+                    <img src="" alt="" />
                 </div>
                 <div className='click'>
                     {/* onclick  goto login page*/}
