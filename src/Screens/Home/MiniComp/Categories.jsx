@@ -9,14 +9,17 @@ function Categories({ props }) {
     const navigate = useNavigate()
 
     useEffect(() => {
-        let newdata=[]
+        const newdata=[]
 
         props.forEach(element => {
-            newdata.push(element["name"])
-            // if (!newdata.find(e => e == element.categoris)) {
-            //   newdata.push(element.categoris)
-            // }
+            // newdata.push(element["name"])
+            if (!newdata.find(e => e == element.categoris)) {
+              newdata.push(element.categoris)
+            }
         });
+
+        setData(newdata)
+        //console.log(newdata)
 
     }, [])
 
@@ -24,16 +27,19 @@ function Categories({ props }) {
     // console.log(data)
 
     const gotocategorisProduct = (e) => {
+
         const data = props.filter((items) => items.categoris == e)
         navigate('/allProduct', { state: data })
+
+        console.log(e)
     }
 
     return (
         <div className='cat-container'>
 
-            {props && props.map((props, index) =>
+            {data && data.map((props, index) =>
                 <div
-                    onClick={() => gotocategorisProduct(props.categoris)}
+                    onClick={() => gotocategorisProduct(props)}
                     key={index} className="cat click">
                     <img
                         className='cate'
@@ -41,7 +47,7 @@ function Categories({ props }) {
 
                     <text style={{ fontSize: '12px', textAlign: 'center', fontWeight: 'bold' }}>
 
-                        {props.categoris}
+                        {props}
 
                     </text>
                 </div>)}

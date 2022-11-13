@@ -87,8 +87,8 @@ function ProductDetails() {
             borderColor: Color.black,
             marginTop: "5px",
 
-            // position: " -webkit - sticky",
-            // position: "sticky",
+            position: " -webkit - sticky",
+            position: "sticky",
             bottom: 0,
             display: "flex",
             gap: "5px",
