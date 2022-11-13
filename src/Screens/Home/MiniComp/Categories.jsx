@@ -40,7 +40,7 @@ function Categories({ props }) {
             {data && data.map((props, index) =>
                 <div
                     onClick={() => gotocategorisProduct(props)}
-                    key={index} className="cat click">
+                    key={index} className="cat clickP">
                     <img
                         className='cate'
                         src='https://www.block-machine.net/wp-content/uploads/2019/05/3-QT4-25C-Automatic-Brick-Making-Machine.jpg' alt="categories" />

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import logo from '../Data/images/msmaitilogo.png'
 
-const headerStyle = { backgroundColor:Color.TrueBlue, color: "white", display: 'flex', justifyContent: "space-around", marginBottom:'10px' }
+const headerStyle = { backgroundColor:"#e1e2dc", color: "black", display: 'flex', justifyContent: "space-between", marginBottom:'10px',  alignItems: "center",borderRadius:'5px'}
 
 function Hader() {
     let navigate = useNavigate();
@@ -12,14 +12,18 @@ function Hader() {
     return (
         <>
             <div style={headerStyle}>
-                <div className='click' onClick={()=>navigate('/')}>
+                <div className='click' 
+                style={{display:"flex", alignItems: "center",}}
+                onClick={()=>navigate('/')}>
                  {/* onclick  goto home page*/}
-                    <img src={logo} alt="" style={{height:"30px",width:'30px'}} />
+                    <img src={logo} alt="" style={{height:"40px",width:'40px',marginTop:"5px"}} />
+
+             <p style={{fontWeight:'600',left:"-30px"}}>       M/s Maiti Mercantile</p>
+
                 </div>
                 <div className='click'>
                     {/* onclick  goto login page*/}
-                    login
-                </div>
+                    <p style={{fontWeight:'400',marginRight:"10px"}}>   about us    </p>                </div>
             </div>
         </>
     )

@@ -1,9 +1,10 @@
 .cat-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   overflow-x: auto;
-  gap: 20px;
+  gap: 5px;
   margin-bottom: 5px;
+  background-color: #eff0eb;
 }
 
 

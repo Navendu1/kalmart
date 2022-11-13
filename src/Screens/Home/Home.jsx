@@ -4,6 +4,8 @@ import Carousel from './MiniComp/CarouselComp'
 import Categories from './MiniComp/Categories'
 import PopulerProductComp from './MiniComp/Products/PopulerProductComp'
 
+import Footer from '../../MiniComp/Footer/Footer'
+
 function Home({data}) {
     
     return (
